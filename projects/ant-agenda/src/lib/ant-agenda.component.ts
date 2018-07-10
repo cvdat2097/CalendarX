@@ -3,7 +3,7 @@ import { AntAgendaService } from './ant-agenda.service'
 @Component({
   selector: 'ngx-ant-agenda',
   templateUrl: './ant-agenda.component.html',
-  styles: []
+  styleUrls: ['./ant-agenda.component.css'],
 })
 export class AntAgendaComponent implements OnInit {
   events: any = [];

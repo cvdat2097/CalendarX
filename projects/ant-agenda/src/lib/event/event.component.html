@@ -1,0 +1,27 @@
+<div class="text-left">
+    <div class="col-md-3 event-date">
+        <h2>{{this.selectedDay.getDate()}}</h2>
+        <br />
+        <p>{{this.calendarService.getDayName(this.selectedDay)}}</p>
+    </div>
+    <div class="col-md-9">
+        <table>
+            <td *ngIf="!this.events || this.events.length == 0">No event</td>
+            <tr *ngFor="let event of this.events">
+                <td class="event-color" [eventColor]="event.color">
+                </td>
+                <td class="event-content">
+                    <div>
+                        <h3>{{ event.title }}</h3>
+                        <div class="event-time">
+                            <span>{{event.startDate.getHours()}}h - {{event.endDate.getHours()}}h</span>
+                        </div>
+                        <div class="event-description">
+                            <small>{{event.description}}</small>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

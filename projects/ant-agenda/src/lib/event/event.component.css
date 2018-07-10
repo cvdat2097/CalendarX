@@ -1,0 +1,19 @@
+tr {
+    margin-bottom: 5px;
+}
+.event-color {
+    width: 5px;
+    height: 100%;
+}
+
+.event-content {
+    padding-left: 30px;
+}
+
+.event-date {
+    padding-left: 50px;
+}
+
+h2 {
+    display: inline-block;
+}

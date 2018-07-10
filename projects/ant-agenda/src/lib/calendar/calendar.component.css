@@ -1,0 +1,40 @@
+#calendar-header {
+    display: flex;
+    align-items: center;
+    margin: 15px auto -10px auto;
+}
+
+.btn {
+    width: 90px;
+}
+
+.calendar-day {
+    display: inline-block;
+    width: 13%;
+    height: 10%;
+    border: 1px solid darkgrey;
+}
+
+.not-in-current-month {
+    color: gainsboro;
+}
+
+.calendar-dayname {
+    height: auto;
+    font-weight: bold;
+}
+
+.event-exists {
+    font-weight: bold;
+    color: red;
+}
+
+.current-date{
+    color: cornflowerblue;
+    background-color: gainsboro;   
+}
+
+.selected-date {
+    background-color: khaki;
+    border-radius: 10px;
+}

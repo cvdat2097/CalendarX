@@ -1,0 +1,36 @@
+<div>
+    <!-- HEADER -->
+    <div id="calendar-header" class="row">
+        <div class="col-md-3">
+            <button class="btn btn-primary" (click)="goToPreviousMonth()">Previous</button>
+        </div>
+        <div class="col-md-6">
+            <h2>{{monthName[currentDate.getMonth()] +' '+ currentDate.getFullYear().toString().substring(2)}}</h2>
+        </div>
+        <div class="col-md-3">
+            <button class="btn btn-primary" (click)="goToNextMonth()">Next</button>
+        </div>
+    </div>
+
+    <hr />
+
+    <!-- CALENDAR -->
+    <div class="row">
+        <div class="calendar-day calendar-dayname" *ngFor="let name of dayName">
+            {{name}}
+        </div>
+    </div>
+    <div id="calendar-content" class="row">
+        <div *ngFor="let week of days">
+            <div class="calendar-day" *ngFor="let day of week" [ngClass]="{'current-date': day.date.getDate() == this.today.getDate() && day.date.getMonth() == this.today.getMonth() && day.date.getYear() == this.today.getYear()}"
+            (click)="onDaySelected(day)">
+                <h3 *ngIf="day" [ngClass]="{'not-in-current-month': !(day.date.getMonth() == this.currentDate.getMonth())}">
+                    {{day.date.getDate()}}
+                </h3>
+                <p>
+                    <span [ngClass]="{'event-exists': day.events.length > 0}">{{day.events.length}}</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
